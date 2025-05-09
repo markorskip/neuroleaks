@@ -2,3 +2,4 @@ torch
 transformers
 gitpython
 regex
+pytest
