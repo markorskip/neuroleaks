@@ -1,0 +1,5 @@
+- id: neuroleaks
+  name: NeuroLeaks Secret Detection
+  entry: python neuroleaks/hybrid_secret_check.py
+  language: python
+  types: [text]

@@ -1,0 +1,5 @@
+repos:
+  - repo: https://github.com/markorskip/neuroleaks
+    rev: v0.1.0  # or main until tagged
+    hooks:
+      - id: neuroleaks
