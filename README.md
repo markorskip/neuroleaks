@@ -1,6 +1,4 @@
-**NeuroLeaks** project:
 
-````markdown
 # NeuroLeaks
 
 **AI-powered secret detection for code commits using transformers and regex.**
@@ -34,31 +32,31 @@ cd neuroleaks
 
 > It's recommended to do this inside a virtual environment.
 
-```bash
+````
 pip install -r requirements.txt
-```
+````
 
 ---
 
-## ⚙️ Using NeuroLeaks in Pre-commit
+## Using NeuroLeaks in Pre-commit
 
 ### Step 1: Install `pre-commit` (if you haven’t already)
 
-```bash
+````
 pip install pre-commit
-```
+````
 
 ---
 
 ### Step 2: Reference NeuroLeaks in Your Project’s `.pre-commit-config.yaml`
 
-```yaml
+````
 repos:
   - repo: https://github.com/markorskip/neuroleaks
     rev: main  # or use a specific tag like v0.1.0
     hooks:
       - id: neuroleaks
-```
+````
 
 ---
 
@@ -66,37 +64,35 @@ repos:
 
 From the root of your project:
 
-```bash
+````
 pre-commit install
-```
+````
 
 ---
 
 ### Step 4: Run It Manually (Optional)
 
-```bash
+````
 pre-commit run --all-files
-```
+````
 
 You’ll get output like:
 
-```
+````
 NeuroLeaks Secret Detection......................................❌
 - [REGEX] Line 3: 'api_key = "AIzaSy123..."' matched api key pattern
 - [ML]    Line 9: 'token = ghp_abcd1234...' (risk score: 0.91)
-```
-
----
+````
 
 ## Testing NeuroLeaks
 
 NeuroLeaks includes a test suite to validate its ML and regex behavior.
 
-### Run the tests:
+### Run the tests
 
-```bash
+````
 pytest tests/
-```
+````
 
 ---
 
@@ -108,23 +104,23 @@ pytest tests/
 
 ---
 
-## 📜 License
+## License
 
 MIT License
 
 ---
 
-## 🤖 Badge
+## Badge
 
 Want to display that your repo is checked by NeuroLeaks? Add this badge:
 
-```markdown
+````
 ![NeuroLeaks Verified](https://img.shields.io/badge/Secrets-Checked%20by%20NeuroLeaks-blueviolet?style=flat&logo=ai)
-```
+````
 
 ---
 
-## ✨ Coming Soon
+## Coming Soon
 
 * [ ] Docker support
 * [ ] Fine-tuned CodeBERT on real-world leaked secrets
@@ -133,7 +129,6 @@ Want to display that your repo is checked by NeuroLeaks? Add this badge:
 
 ---
 
-## 💬 Questions or Feedback?
+## Questions or Feedback?
 
 Open an issue or start a discussion. Contributions welcome!
-
