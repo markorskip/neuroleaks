@@ -1,7 +1,7 @@
 **NeuroLeaks** project:
 
 ````markdown
-# 🧠 NeuroLeaks
+# NeuroLeaks
 
 **AI-powered secret detection for code commits using transformers and regex.**
 
@@ -21,7 +21,7 @@ NeuroLeaks combines traditional regex scanning with CodeBERT, a state-of-the-art
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone the Repo
 
@@ -88,7 +88,7 @@ NeuroLeaks Secret Detection......................................❌
 
 ---
 
-## 🧪 Testing NeuroLeaks
+## Testing NeuroLeaks
 
 NeuroLeaks includes a test suite to validate its ML and regex behavior.
 
@@ -96,23 +96,6 @@ NeuroLeaks includes a test suite to validate its ML and regex behavior.
 
 ```bash
 pytest tests/
-```
-
----
-
-## 📂 Project Structure
-
-```
-neuroleaks/
-├── neuroleaks/
-│   ├── __init__.py
-│   └── hybrid_secret_check.py      # Main hook script
-├── tests/
-│   └── test_hybrid_secret_check.py # Test cases
-├── .pre-commit-hooks.yaml          # Hook declaration
-├── .pre-commit-config.yaml         # Example usage
-├── requirements.txt
-└── README.md
 ```
 
 ---
