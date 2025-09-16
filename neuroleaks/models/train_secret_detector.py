@@ -19,14 +19,44 @@ SEED = 42
 random.seed(SEED)
 torch.manual_seed(SEED)
 
+
 # === SYNTHETIC DATA GENERATION ===
 
-
-dataset = load_from_disk("secret_detection_dataset")
 
 # === TOKENIZATION ===
 def tokenize(example):
     return tokenizer(example["text"], padding="max_length", truncation=True, max_length=128)
+
+def generate_synthetic_data(num_samples):
+    data = []
+    secrets = [
+        "password=123456",
+        "api_key=AKIAIOSFODNN7EXAMPLE",
+        "secret: hunter2",
+        "token: ghp_1234567890abcdef",
+        "-----BEGIN PRIVATE KEY-----",
+        "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC7",
+    ]
+    nonsensitive = [
+        "The quick brown fox jumps over the lazy dog.",
+        "This is a regular sentence.",
+        "Meeting at 10am tomorrow.",
+        "Please review the attached document.",
+        "Lunch at noon?",
+        "The weather is nice today.",
+    ]
+
+    for _ in range(num_samples):
+        if random.random() < 0.5:
+            text = random.choice(secrets)
+            label = 1
+        else:
+            text = random.choice(nonsensitive)
+            label = 0
+        data.append({"text": text, "label": label})
+
+    return Dataset.from_list(data)
+
 
 # === MAIN TRAINING FUNCTION ===
 def main():
